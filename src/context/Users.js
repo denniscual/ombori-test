@@ -7,6 +7,7 @@ import getDisplayName from 'utils/getDisplayName'
 const { Provider, Consumer } = createContext()
 
 /**
+ * TODO: Add unit tests for connect HOC.
  * HOC for connecting the Component into Users context.
  */
 const connect = (WrappedComponent) => {
@@ -20,7 +21,7 @@ const connect = (WrappedComponent) => {
   ConnectedComponent.displayName = `Connected(${getDisplayName(WrappedComponent)})`
 
   return ConnectedComponent
-} 
+}
 
 export {
   Provider,

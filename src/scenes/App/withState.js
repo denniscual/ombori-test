@@ -5,6 +5,7 @@ import { Provider } from 'context/Users'
 import getDisplayName from 'utils/getDisplayName'
 
 /**
+ * TODO: Add unit tests
  * withState :: Component => Component
  *
  * withState is an HOC which abstracts the business logic of getting users and hydate to 
