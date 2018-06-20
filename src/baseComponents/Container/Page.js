@@ -7,4 +7,6 @@ import styled from 'styled-components'
  */
 export default styled.div`
   background-color: #F5F5F5;
+  min-height: 100vh;
+  position: relative;
 `

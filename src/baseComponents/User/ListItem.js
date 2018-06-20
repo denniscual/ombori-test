@@ -12,7 +12,7 @@ import Placeholder from './Placeholder'
  * @function
  */
 const ListItem = ({avatarURL, name}) => (
-  <LazyLoad height={110} offset={[-150, 0]} placeholder={<Placeholder />}>
+  <LazyLoad height={110} offset={[-200, 0]} placeholder={<Placeholder />}>
     <Item>
       <AvatarCircle
         style={{marginLeft: '1em'}}

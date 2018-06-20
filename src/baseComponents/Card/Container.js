@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 /**
- * The card component for the list.
+ * The card component for the container.
  * Default export Component
  * @function
  */

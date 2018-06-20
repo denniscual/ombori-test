@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // DOMAIN URL
-const DOMAIN = 'https://reqres.in/'
+const DOMAIN = 'https://reqres.in'
 
 /**
  * getUsers :: none => Promise
@@ -9,4 +9,4 @@ const DOMAIN = 'https://reqres.in/'
  * Make a request for getting the users.
  * @return {Promise} Promise value which either resolved or rejected.
  */
-export const getUsers = () => axios.get(`${DOMAIN}/api/users`)
+export const getUsers = () => axios.get(`${DOMAIN}/api/users?per_page=12`)

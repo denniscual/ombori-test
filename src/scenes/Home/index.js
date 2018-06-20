@@ -1,7 +1,6 @@
 import React from 'react'
 // User List
 import UserList from 'baseComponents/User/List'
-import UserListItem from 'baseComponents/User/ListItem'
 // Other Components
 import ContainerPage from 'baseComponents/Container/Page'
 import ContainerList from 'baseComponents/Container/List'
@@ -11,20 +10,7 @@ const Home = () => (
   <ContainerPage>
     <HeaderPage content='User List' />
     <ContainerList>
-      <UserList>
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-        <UserListItem />
-      </UserList>
+      <UserList />
     </ContainerList>
   </ContainerPage>
 )
