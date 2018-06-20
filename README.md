@@ -1,7 +1,7 @@
 ## Ombori Test Project
-This project is referred to this [problem statement](https://github.com/ombori/react-native-code-test).
+This project is referred to this [problem statement](https://github.com/ombori/react-native-code-test). You can see the result [here](https://github.com/denniscual/ombori-test).
 
-## Approach and tools
+## Tools
 - Scaffolded by [create-react-app](https://github.com/facebook/create-react-app)
 - CSS frameworks [semantic-ui-react](https://react.semantic-ui.com/introduction)
 - Css-in-js [styled-components](https://www.styled-components.com/)
