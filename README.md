@@ -1,6 +1,8 @@
 ## Ombori Test Project
 This project is referred to this [problem statement](https://github.com/ombori/react-native-code-test). You can see the result [here](https://denniscual.github.io/ombori-test).
 
+[![Build Status](https://travis-ci.org/denniscual/ombori-test.svg?branch=master)](https://travis-ci.org/denniscual/ombori-test)
+
 ## Tools
 - Scaffolded by [create-react-app](https://github.com/facebook/create-react-app)
 - CSS frameworks [semantic-ui-react](https://react.semantic-ui.com/introduction)
