@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // DOMAIN URL
-const DOMAIN = 'https://reqres.in'
+const DOMAIN = 'https://reqres.in/'
 
 /**
  * getUsers :: none => Promise
