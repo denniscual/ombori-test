@@ -15,7 +15,7 @@ const pulse = keyframes`
 
   70% {
       -moz-box-shadow: 0 0 0 10px rgba(14, 190, 255, 0);
-      box-shadow: 0 0 0 25px rgba(14, 190, 255, 0);
+      box-shadow: 0 0 0 50px rgba(14, 190, 255, 0);
   }
 
   100% {
@@ -30,8 +30,11 @@ const pulse = keyframes`
  * @function
  */
 const StyledUser = styled(User)`
-  margin: 100px;
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
   width: 15px;
   height: 15px;
   border-radius: 50%;
