@@ -6,7 +6,7 @@ import Placeholder from './Placeholder'
 const NoMoreUsers = () => (
   <LazyLoad height={110} offset={[-200, 0]} placeholder={<Placeholder />}>
     <Item>
-      <Header size='medium' textAlign='center'>
+      <Header size='medium' textAlign='center' style={{margin: '0 auto'}}>
         No more users!
       </Header>
     </Item>
