@@ -24,7 +24,7 @@ const List = ({users, process: {success, error}}) => {
     return <ListItem key={user.id} avatarURL={user.avatar} name={fullName}/>
   }
   // create ListItem array. And append item to listItemArray. The item component for displaying message 'No more users'
-  const listItemArray = compose(append(<NoMoreUsers />), map(mapTransformer))
+  const listItemArray = compose(append(<NoMoreUsers key={123} />), map(mapTransformer))
 
   /* Display list if the request is resolved.*/
   if (success) {
