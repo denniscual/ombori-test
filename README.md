@@ -1,5 +1,5 @@
 ## Ombori Test Project
-This project is referred to this [problem statement](https://github.com/ombori/react-native-code-test). You can see the result [here](https://github.com/denniscual/ombori-test).
+This project is referred to this [problem statement](https://github.com/ombori/react-native-code-test). You can see the result [here](https://denniscual.github.io/ombori-test).
 
 ## Tools
 - Scaffolded by [create-react-app](https://github.com/facebook/create-react-app)
