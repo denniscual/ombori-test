@@ -2,12 +2,23 @@ import React from 'react'
 import { createContext } from 'react'
 import getDisplayName from 'utils/getDisplayName'
 
+// This is the default state for the Users context. Consumer will use this value when
+// it does not have a matching Provider component. Pretty convenient for testing.
+const defaultState = {
+  users: [],
+  process: {
+    isLoading: false,
+    success: false,
+    error: null
+  }
+}
+
 // create user content
-// TODO: Add default value
-const { Provider, Consumer } = createContext()
+const { Provider, Consumer } = createContext(defaultState)
 
 /**
- * TODO: Add unit tests for connect HOC.
+ * connect :: Component => Component
+ *
  * HOC for connecting the Component into Users context.
  */
 const connect = (WrappedComponent) => {

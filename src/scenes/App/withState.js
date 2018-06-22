@@ -47,7 +47,7 @@ const withState = (WrappedComponent) => {
     render () {
       return (
         <Provider value={this.state}>
-          <WrappedComponent state={this.state}/>
+          <WrappedComponent />
         </Provider>
       )
     }
