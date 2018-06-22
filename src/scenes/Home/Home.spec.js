@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Home from './index'
+import Home from './Home'
 import ContainerPage from 'baseComponents/Container/Page'
 import ContainerList from 'baseComponents/Container/List'
 import HeaderPage from 'baseComponents/Header/Page'

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { getUsers } from 'api/users/getUsers'
 import { setUsersAndProcess, setProcess } from 'updater/users'
 import { Provider } from 'context/Users'
 import getDisplayName from 'utils/getDisplayName'
@@ -25,6 +24,7 @@ const withState = (WrappedComponent) => {
     }
 
     componentDidMount () {
+      const { getUsers } = this.props
       // update the isLoading property from process state.
       this.setState(setProcess({isLoading: true}))
       getUsers()

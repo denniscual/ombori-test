@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from './index'
-import Home from 'scenes/Home'
+import App from './App'
+import Home from 'scenes/Home/Home'
 
 // FIXME: We need to fix the test for the App component.
 describe.skip('App', function () {

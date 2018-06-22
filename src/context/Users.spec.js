@@ -20,6 +20,10 @@ describe('connect', function () {
     this.mountWrapper = mount(<ConnectedTestComponent test='test'/>)
   })
 
+  afterEach(() => {
+    this.mountWrapper.unmount()
+  })
+
   it('should render a TestComponent', () => {
     const received = this.mountWrapper.find(TestComponent).exists()
     expect(received).toBeTruthy()
