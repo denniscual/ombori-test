@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import withState from './withState'
 import { stub, spy } from 'sinon'
 import App from 'scenes/App/App'
@@ -10,19 +10,24 @@ const response = {
   }
 }
 
+// FIXME: When using mount, it throws an error.
 describe('withState', function () {
-  // create getUsers stub
-  this.getUsersStub = stub().resolves(response)
   // creating WithState Component
   const WithState = withState(App)
-  // stub the prototype componentDidMount
-  this.componentDidMountStub = spy(WithState.prototype, 'componentDidMount')
-  // create a react shallow wrapper
-  this.shallowWrapper = shallow(<WithState getUsers={this.getUsersStub} />)
+
+  beforeEach(() => {
+    // create getUsers stub
+    this.getUsersStub = stub().resolves(response)
+    // stub the prototype componentDidMount
+    this.componentDidMountStub = spy(WithState.prototype, 'componentDidMount')
+    // create a react shallow wrapper
+    this.shallowWrapper = shallow(<WithState getUsers={this.getUsersStub} />)
+  })
 
   afterEach(() => {
     // reset the behavior
     this.getUsersStub.resetBehavior()
+    this.componentDidMountStub.restore()
   })
 
   it('should call componentDidMount once', () => {
@@ -36,7 +41,8 @@ describe('withState', function () {
   })
 
   it('should update the Components state after getting users', () => {
-    const fakeState = {
+    const received = this.shallowWrapper.state()
+    const expected = {
       users: response.data.data,
       process: {
         isLoading: false,
@@ -44,17 +50,23 @@ describe('withState', function () {
         error: null
       }
     }
-    const received = this.shallowWrapper.state()
-    const expected = fakeState
     expect(received).toEqual(expected)
   })
 
-  // FIXME: Cannot override the stub value.
-  it.skip('should return error when getUsers is rejected', () => {
+  it('should return error when getUsers is rejected', () => {
     const error = new Error('Error response')
     this.getUsersStub.rejects(error)
-    const received = this.shallowWrapper.state('process').error.message
-    const expected = error.message
-    expect(received).toBe(expected)
+    const wrapper = shallow(<WithState getUsers={this.getUsersStub} />)
+    // TODO: Check this link for testing Async Component - https://github.com/airbnb/enzyme/issues/346
+    return Promise.resolve()
+                  .then(() => {
+                    // We need to call update() to re-render the component.
+                    wrapper.update()
+                  })
+                  .then(() => {
+                    const received = wrapper.state().process.error.message
+                    expect(received).toBe(error.message)
+                  })
   })
 })
+
