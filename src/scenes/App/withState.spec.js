@@ -58,6 +58,7 @@ describe('withState', function () {
   it('ensures that the state is correctly set when the request is rejected', () => {
     const error = new Error('Error response')
     this.getUsersStub.rejects(error)
+    // Refer to this link - https://github.com/airbnb/enzyme/issues/346
     // create again a Wrapper so that we can pass the new this.getUsersStub - new return value.
     const Wrapper = shallow(<WithState getUsers={this.getUsersStub} />)
     // awaiting to the function which is the replacement of the original function.
